@@ -4,4 +4,9 @@ DM2 project @ SRH Heidelberg. ETL workflow creation &amp; Walmart weather datase
 Main question for analyzing this dataset:
 
     In which correlation, positive or negative, is the temperature related to the different Walmart products and their sales?
+    
+## Useful Links:
+
+- https://www.dataquest.io/blog/python-pandas-databases/
+- https://www.1728.org/relhum.htm
  
