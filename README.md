@@ -1,4 +1,4 @@
-# walmart_weather_etl_analysis
+# Walmart Weather ETL Analysis
 DM2 project @ SRH Heidelberg. ETL workflow creation &amp; Walmart weather dataset analysis.
 
 Main question for analyzing this dataset:
@@ -9,4 +9,5 @@ Main question for analyzing this dataset:
 
 - https://www.dataquest.io/blog/python-pandas-databases/
 - https://www.1728.org/relhum.htm
+- https://www.datascience.com/blog/introduction-to-correlation-learn-data-science-tutorials
  

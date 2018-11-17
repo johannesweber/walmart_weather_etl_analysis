@@ -1,5 +1,5 @@
 DB_PATH = 'data/weather.db'
-# DB_PATH = 'data/weather_excerpt.db'
+DB_PATH_TEST = 'data/weather_test.db'
 XLSX_SHEET = 'Sheet1'
 SOURCE_FILE = 'data/weather.xlsx'
-# SOURCE_FILE = 'data/weather_excerpt.xlsx'
+SOURCE_FILE_TEST = 'data/weather_test.xlsx'
