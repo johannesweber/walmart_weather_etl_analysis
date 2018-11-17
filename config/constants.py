@@ -1,3 +1,5 @@
 DB_PATH = 'data/weather.db'
+# DB_PATH = 'data/weather_excerpt.db'
 XLSX_SHEET = 'Sheet1'
 SOURCE_FILE = 'data/weather.xlsx'
+# SOURCE_FILE = 'data/weather_excerpt.xlsx'
