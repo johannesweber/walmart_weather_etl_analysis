@@ -76,6 +76,30 @@ class DatabaseHelper:
 class Helper:
 
     @staticmethod
+    def calculate_relative_humidity_jupyter(row):
+        relative_humidity = 0
+
+        # formula from https://www.1728.org/relhum.htm
+        dry_bulb_temperature = row['tavg']
+        wet_bulb_temperature = row['wetbulb']
+
+        if wet_bulb_temperature != 0 and \
+                dry_bulb_temperature != 0 and \
+                (dry_bulb_temperature != wet_bulb_temperature) and \
+                wet_bulb_temperature < dry_bulb_temperature:
+            dry_bulb_temperature_celsius = Helper._calculate_celsius_from_fahrenheit(dry_bulb_temperature)
+            wet_bulb_temperature_celsius = Helper._calculate_celsius_from_fahrenheit(wet_bulb_temperature)
+
+            e_dry = 6.112 * 2.71828182845904 ** ((17.502 * dry_bulb_temperature_celsius) /
+                                                 (240.97 + dry_bulb_temperature_celsius))
+            e_wet = 6.112 * 2.71828182845904 ** ((17.502 * wet_bulb_temperature_celsius) /
+                                                 (240.97 + wet_bulb_temperature_celsius))
+
+            relative_humidity = ((e_wet - (0.6687451584 * ((1 + 0.00115 * wet_bulb_temperature_celsius) * (
+                    dry_bulb_temperature_celsius - wet_bulb_temperature_celsius)))) / e_dry) * 100
+        return relative_humidity
+
+    @staticmethod
     def calculate_relative_humidity(row):
         relative_humidity = 0
 

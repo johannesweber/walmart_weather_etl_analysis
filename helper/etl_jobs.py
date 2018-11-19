@@ -76,8 +76,7 @@ class Jobs:
                                    'preciptation_total',
                                    'station_pressure',
                                    'sealevel',
-                                   'avg_speed',
-                                   'units_sold']]
+                                   'avg_speed']]
 
         dimensions = {'date': 'date', 'store': 'store_id', 'station': 'station_id', 'item': 'item_id'}
 
