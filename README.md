@@ -10,4 +10,16 @@ Main question for analyzing this dataset:
 - https://www.dataquest.io/blog/python-pandas-databases/
 - https://www.1728.org/relhum.htm
 - https://www.datascience.com/blog/introduction-to-correlation-learn-data-science-tutorials
+
+## Needed Librarys
+
+Python 3.x
+
+- pip install pandas
+- pip install sqlite3
+- pip install --upgrade --no-deps statsmodels
+- pip install xlrd
+- pip install sklearn
+- pip install numpy
+- pip install matplotlib
  
