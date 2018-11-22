@@ -6,6 +6,13 @@ class DatabaseHelper:
     conn = None
     cursor = None
 
+    def drop_tables(self):
+        tables = ['date', 'item', 'sales', 'station', 'store', 'weather']
+
+        for table in tables:
+            query = 'DROP TABLE ' + table
+            self.conn.execute(query)
+
     def connect_to_db(self, db_path):
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()

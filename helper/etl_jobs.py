@@ -16,6 +16,7 @@ class Jobs:
         self.db_helper.connect_to_db(db_path)
 
     def create_star_scheme(self):
+        self.db_helper.drop_tables()
         self.db_helper.create_star_scheme()
 
     def extract_from_xlsx(self, input_path):

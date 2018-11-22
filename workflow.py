@@ -6,8 +6,7 @@ from config import constants
 logger = logging.getLogger(__name__)
 util.setup_logging()
 
-test_mode = True
-create_db = False
+test_mode = False
 
 
 def main():
@@ -20,30 +19,25 @@ def main():
         output_path = constants.DB_PATH
         input_path = constants.SOURCE_FILE
 
+    logger.info('Extract...')
+    logger.info('Creating DB Scheme...')
     job.init_db_connection(output_path)
-
-    if create_db:
-        # create DB scheme
-        logger.info('Initialize DB...')
-        job.create_star_scheme()
+    job.create_star_scheme()
 
     logger.info('Reading Excel File...')
     job.extract_from_xlsx(input_path)
 
-    #  rename columns
-    logger.info('Starting Transformation...')
+    logger.info('Transform...')
     logger.info('Renaming Columns...')
     job.rename_columns()
 
-    # remove rows with NULL ids
-    logger.info('Renaming Rows with NULL values in xxx_id  column...')
+    logger.info('Removing Rows with NULL values in xxx_id  column...')
     job.drop_null_ids()
 
-    # create dimension dataframes (store, station, item)
+    # creating store, station, item
     logger.info('Creating Dimension Dataframes/Tables...')
     job.create_dimension_tables()
 
-    # create dimension dataframes (weather, units)
     logger.info('Creating Fact Dataframes/Tables...')
     logger.info('Creating Sales Fact...')
     job.create_sales_fact_table()
@@ -51,7 +45,7 @@ def main():
     logger.info('Creating Weather Fact...')
     job.create_weather_fact_table()
 
-    logger.info('Loading dataframes in Database...')
+    logger.info('Load...')
     job.load_into_database()
 
 
