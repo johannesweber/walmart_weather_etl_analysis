@@ -15,6 +15,8 @@ Main question for analyzing this dataset:
 
 Python 3.x
 
+- python3 -m pip install --upgrade pip
+- python3 -m pip install jupyter
 - pip install pandas
 - pip install sqlite3
 - pip install --upgrade --no-deps statsmodels
